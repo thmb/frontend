@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "rsbuild dev --host 0.0.0.0 --port 3000",
     "build": "rsbuild build --mode production",
+    "clean": "rm -rf dist node_modules package-lock.json",
     "update": "npx npm-check-updates --upgrade && npm install",
     "format": "prettier --write src/**/*.{ts,tsx,json,css,md}",
     "lint": "eslint src --ext .ts,.tsx --fix"
