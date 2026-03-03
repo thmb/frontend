@@ -1,21 +1,20 @@
-// src/theme.ts
 import { createTheme } from "@mantine/core";
 
 export const theme = createTheme({
   colors: {
-    raioGreen: [
+    blueprintGreen: [
       "#E8FFF2",
       "#D1FFE5",
       "#A3FFD1",
       "#74FFBC",
       "#4AFFA8",
-      "#00FF88", // primary color
+      "#00FF88",
       "#00E675",
       "#00CC62",
       "#00B34F",
-      "#00993C",
+      "#00993C"
     ],
-    raioDark: [
+    blueprintDark: [
       "#F8F9FA",
       "#E9ECEF",
       "#DEE2E6",
@@ -25,13 +24,13 @@ export const theme = createTheme({
       "#495057",
       "#343A40",
       "#212529",
-      "#1A1D20", // maximize contrast
-    ],
+      "#1A1D20"
+    ]
   },
-  primaryColor: "raioGreen",
+  primaryColor: "blueprintGreen",
   fontFamily: "Inter, system-ui, sans-serif",
   headings: {
     fontFamily: "Inter, system-ui, sans-serif",
-    fontWeight: "700",
-  },
+    fontWeight: "700"
+  }
 });

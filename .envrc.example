@@ -1,0 +1,2 @@
+# Copy to .envrc and adjust values for your local setup.
+export API="http://localhost:3001"

@@ -1,89 +1,55 @@
-# FRONTEND
+# THMB Frontend Blueprint
 
-A lean and fast frontend application built with React, TypeScript, Mantine, and Rsbuild.
+Lean monorepo starter for React web and React Native mobile apps with shared packages.
 
-## 🚀 Tech Stack
+## Stack
 
-- **React 19** - Modern React with latest features
-- **TypeScript** - Type-safe development
-- **Mantine 8** - Comprehensive UI component library
-- **Rsbuild** - Fast Rspack-powered build tool
+- Web: React 19 + Rsbuild
+- Mobile: Expo (managed workflow) + React Native
+- Shared UI: `react-native` components rendered on web via `react-native-web`
+- Tests: Jest + Testing Library (`@testing-library/react` and `@testing-library/react-native`)
+- Package management: npm workspaces
 
-## 📁 Project Structure
+## Structure
 
+```txt
+apps/
+  web/                  # React + Rsbuild app
+    tests/              # Web tests
+  mobile/               # Expo app
+    tests/              # Mobile tests
+packages/
+  components/           # Shared cross-platform UI components
+  services/             # API layer
+  stores/               # State layer
+  types/                # Shared TS types
+  utils/                # Pure utility functions
+assets/                 # Shared static assets (images/fonts)
 ```
-src/
-├── hooks/     # Custom React hooks
-├── pages/     # Page components
-├── services/  # API services and data fetching
-├── utils/     # Utility functions
-├── App.tsx    # Main application component
-└── main.tsx   # Application entry point
-```
 
-## � Deployment
-
-### GitHub Pages (Automated)
-This project includes a GitHub Action workflow that automatically:
-- ✅ **Builds the static site** on every push to `main`
-- ✅ **Runs TypeScript type checking** to ensure quality
-- ✅ **Deploys to GitHub Pages** using the official actions
-- ✅ **No special branch needed** - deploys directly from `main`
-
-The site will be available at: `https://raioenergia.github.io/site/`
-
-### Manual Deployment
-You can also build and deploy manually:
+## Quick start
 
 ```bash
-npm run build        # Generates static files in dist/
-# Upload dist/ contents to any static hosting service
+npm install
+cp .envrc.example .envrc
+direnv allow
+npm run dev:web
+npm run dev:mobile
 ```
 
-## �🛠 NPM Scripts
+## Scripts
 
 ```bash
-# Development
-npm run dev          # Start development server on localhost:3000
-
-# Building
-npm run build        # Build for production
-npm run build:prod   # Build with production optimizations
-npm run preview      # Preview production build
-
-# Quality Assurance
-npm run type-check   # TypeScript type checking
+npm run dev:web
+npm run dev:mobile
+npm run build
+npm run lint
+npm run check
+npm run test
 ```
 
-## 🏃‍♂️ Getting Started
+## Notes
 
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-2. Start development server:
-   ```bash
-   npm run dev
-   ```
-
-3. Build for production:
-   ```bash
-   npm run build
-   ```
-
-## 🎯 Features
-
-- ⚡ **Lightning Fast** - Powered by Rspack for ultra-fast builds
-- 🎨 **Modern UI** - Beautiful components with Mantine
-- 📱 **Responsive** - Mobile-first design approach
-- 🔧 **Type Safe** - Full TypeScript support
-- 🚀 **Production Ready** - Optimized static builds
-
-## 📦 Build Output
-
-The build generates static files in the `dist/` folder, ready for deployment to any static hosting service.
-
----
-
-Built with ❤️ for Raio Energia
+- Keep business logic in `packages/services` and `packages/stores`.
+- Keep `packages/components` presentation-only and reusable.
+- This template is intentionally simple for single-developer maintenance.

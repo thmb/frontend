@@ -1,0 +1,17 @@
+{
+  "name": "@thmb/components",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.ts",
+  "types": "index.ts",
+  "react-native": "index.ts",
+  "sideEffects": false,
+  "peerDependencies": {
+    "react": ">=19",
+    "react-native": ">=0.81"
+  },
+  "scripts": {
+    "lint": "eslint . --ext .ts,.tsx",
+    "check": "tsc --noEmit -p tsconfig.json"
+  }
+}

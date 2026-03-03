@@ -1,0 +1,11 @@
+{
+  "name": "@thmb/services",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.ts",
+  "types": "index.ts",
+  "scripts": {
+    "lint": "eslint . --ext .ts",
+    "check": "tsc --noEmit -p tsconfig.json"
+  }
+}
